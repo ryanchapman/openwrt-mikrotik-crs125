@@ -163,10 +163,16 @@ define Device/Default
   IMAGE/sysupgrade.bin = append-kernel $$$$(BLOCKSIZE) | append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE)
 endef
 
+define Device/crs125g
+  BOARDNAME = crs125g
+  CONSOLE = ttyS0,115200
+endef
+TARGET_DEVICES += crs125g
+
 define Device/bsb
   BOARDNAME = BSB
   IMAGE_SIZE = 16000k
-  CONSOLE = ttyATH0,115200
+  CONSOLE = ttyS0,115200
   MTDPARTS = spi0.0:128k(u-boot)ro,64k(u-boot-env)ro,16128k(firmware),64k(art)ro
 endef
 TARGET_DEVICES += bsb
@@ -174,7 +180,7 @@ TARGET_DEVICES += bsb
 define Device/carambola2
   BOARDNAME = CARAMBOLA2
   IMAGE_SIZE = 16000k
-  CONSOLE = ttyATH0,115200
+  CONSOLE = ttyS0,115200
   MTDPARTS = spi0.0:256k(u-boot)ro,64k(u-boot-env)ro,16000k(firmware),64k(art)ro
 endef
 TARGET_DEVICES += carambola2
@@ -335,7 +341,7 @@ define Device/antminer-s1
 	BOARDNAME := ANTMINER-S1
 	DEVICE_PROFILE := ANTMINER_S1
 	TPLINK_HWID := 0x04440001
-	CONSOLE := ttyATH0,115200
+	CONSOLE := ttyS0,115200
 endef
 
 define Device/antminer-s3
@@ -343,7 +349,7 @@ define Device/antminer-s3
 	BOARDNAME := ANTMINER-S3
 	DEVICE_PROFILE := ANTMINER_S3
 	TPLINK_HWID := 0x04440003
-	CONSOLE := ttyATH0,115200
+	CONSOLE := ttyS0,115200
 endef
 
 define Device/el-m150
@@ -351,7 +357,7 @@ define Device/el-m150
     BOARDNAME := EL-M150
     DEVICE_PROFILE := ELM150
     TPLINK_HWID := 0x01500101
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/el-mini
@@ -359,7 +365,7 @@ define Device/el-mini
     BOARDNAME := EL-MINI
     DEVICE_PROFILE := ELMINI
     TPLINK_HWID := 0x01530001
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += antminer-s1 antminer-s3 el-m150 el-mini
 
@@ -368,7 +374,7 @@ define Device/gl-inet-6408A-v1
     BOARDNAME := GL-INET
     DEVICE_PROFILE := GLINET
     TPLINK_HWID := 0x08000001
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/gl-inet-6416A-v1
@@ -376,7 +382,7 @@ define Device/gl-inet-6416A-v1
     BOARDNAME := GL-INET
     DEVICE_PROFILE := GLINET
     TPLINK_HWID := 0x08000001
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += gl-inet-6408A-v1 gl-inet-6416A-v1
 
@@ -393,7 +399,7 @@ define Device/onion-omega
     BOARDNAME := ONION-OMEGA
     DEVICE_PROFILE := OMEGA
     TPLINK_HWID := 0x04700001
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += onion-omega
 
@@ -402,7 +408,7 @@ define Device/tl-mr10u-v1
     BOARDNAME := TL-MR10U
     DEVICE_PROFILE := TLMR10U
     TPLINK_HWID := 0x00100101
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr11u-v1
@@ -410,7 +416,7 @@ define Device/tl-mr11u-v1
     BOARDNAME := TL-MR11U
     DEVICE_PROFILE := TLMR11U
     TPLINK_HWID := 0x00110101
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr11u-v2
@@ -418,7 +424,7 @@ define Device/tl-mr11u-v2
     BOARDNAME := TL-MR11U
     DEVICE_PROFILE := TLMR11U
     TPLINK_HWID := 0x00110102
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr12u-v1
@@ -426,7 +432,7 @@ define Device/tl-mr12u-v1
     BOARDNAME := TL-MR13U
     DEVICE_PROFILE := TLMR12U
     TPLINK_HWID := 0x00120101
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr13u-v1
@@ -434,7 +440,7 @@ define Device/tl-mr13u-v1
     BOARDNAME := TL-MR13U
     DEVICE_PROFILE := TLMR13U
     TPLINK_HWID := 0x00130101
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += tl-mr10u-v1 tl-mr11u-v1 tl-mr11u-v2 tl-mr12u-v1 tl-mr13u-v1
 
@@ -443,7 +449,7 @@ define Device/tl-mr3020-v1
     BOARDNAME := TL-MR3020
     DEVICE_PROFILE := TLMR3020
     TPLINK_HWID := 0x30200001
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr3040-v1
@@ -451,7 +457,7 @@ define Device/tl-mr3040-v1
     BOARDNAME := TL-MR3040
     DEVICE_PROFILE := TLMR3040
     TPLINK_HWID := 0x30400001
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr3040-v2
@@ -459,7 +465,7 @@ define Device/tl-mr3040-v2
     BOARDNAME := TL-MR3040-v2
     DEVICE_PROFILE := TLMR3040
     TPLINK_HWID := 0x30400002
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr3220-v2
@@ -467,7 +473,7 @@ define Device/tl-mr3220-v2
     BOARDNAME := TL-MR3220-v2
     DEVICE_PROFILE := TLMR3220
     TPLINK_HWID := 0x32200002
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-mr3420-v2
@@ -483,7 +489,7 @@ define Device/tl-wr703n-v1
     BOARDNAME := TL-WR703N
     DEVICE_PROFILE := TLWR703
     TPLINK_HWID := 0x07030101
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr710n-v1
@@ -491,7 +497,7 @@ define Device/tl-wr710n-v1
     BOARDNAME := TL-WR710N
     DEVICE_PROFILE := TLWR710
     TPLINK_HWID := 0x07100001
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr710n-v2
@@ -499,7 +505,7 @@ define Device/tl-wr710n-v2
     BOARDNAME := TL-WR710N
     DEVICE_PROFILE := TLWR710
     TPLINK_HWID := 0x07100002
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr720n-v3
@@ -507,7 +513,7 @@ define Device/tl-wr720n-v3
     BOARDNAME := TL-WR720N-v3
     DEVICE_PROFILE := TLWR720
     TPLINK_HWID := 0x07200103
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr720n-v4
@@ -515,7 +521,7 @@ define Device/tl-wr720n-v4
     BOARDNAME := TL-WR720N-v3
     DEVICE_PROFILE := TLWR720
     TPLINK_HWID := 0x07200104
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += tl-wr703n-v1 tl-wr710n-v1 tl-wr710n-v2 tl-wr720n-v3 tl-wr720n-v4
 
@@ -524,7 +530,7 @@ define Device/tl-wr740n-v4
     BOARDNAME := TL-WR741ND-v4
     DEVICE_PROFILE := TLWR740
     TPLINK_HWID := 0x07400004
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr740n-v5
@@ -532,7 +538,7 @@ define Device/tl-wr740n-v5
     BOARDNAME := TL-WR741ND-v4
     DEVICE_PROFILE := TLWR740
     TPLINK_HWID := 0x07400005
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr741nd-v1
@@ -554,7 +560,7 @@ define Device/tl-wr741nd-v4
     BOARDNAME := TL-WR741ND-v4
     DEVICE_PROFILE := TLWR741
     TPLINK_HWID := 0x07410004
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr741nd-v5
@@ -562,7 +568,7 @@ define Device/tl-wr741nd-v5
     BOARDNAME := TL-WR741ND-v4
     DEVICE_PROFILE := TLWR741
     TPLINK_HWID := 0x07400005
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wr743nd-v2
@@ -570,7 +576,7 @@ define Device/tl-wr743nd-v2
     BOARDNAME := TL-WR741ND-v4
     DEVICE_PROFILE := TLWR743
     TPLINK_HWID := 0x07430002
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += tl-wr740n-v4 tl-wr740n-v5 tl-wr741nd-v1 tl-wr741nd-v2 tl-wr741nd-v4 tl-wr741nd-v5 tl-wr743nd-v2
 
@@ -646,7 +652,7 @@ define Device/tl-wa701nd-v2
     BOARDNAME := TL-WA701ND-v2
     DEVICE_PROFILE := TLWA701
     TPLINK_HWID := 0x07010002
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 
 define Device/tl-wa750re-v1
@@ -699,7 +705,7 @@ define Device/tl-wa7210n-v2
     BOARDNAME := TL-WA7210N-v2
     DEVICE_PROFILE := TLWA7210
     TPLINK_HWID := 0x72100002
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += tl-wa7210n-v2
 
@@ -716,7 +722,7 @@ define Device/oolite
     BOARDNAME := GS-OOLITE
     DEVICE_PROFILE := OOLITE
     TPLINK_HWID := 0x3C000101
-    CONSOLE := ttyATH0,115200
+    CONSOLE := ttyS0,115200
 endef
 TARGET_DEVICES += oolite
 
@@ -827,7 +833,7 @@ define Device/ubnt-air-gateway
   UBNT_BOARD := XM
   UBNT_TYPE := AirGW
   UBNT_CHIP := ar933x
-  CONSOLE = ttyATH0,115200
+  CONSOLE = ttyS0,115200
 endef
 TARGET_DEVICES += ubnt-air-gateway
 
@@ -2043,8 +2049,8 @@ $(eval $(call BuildTemplate,all,,64k 128k 256k))
 
 ifeq ($(SUBTARGET),generic)
 $(eval $(call SingleProfile,ALFA,64k,ALFANX,alfa-nx,ALFA-NX,ttyS0,115200,$$(alfa_mtdlayout_8M),1638400,6291456,vmlinux.gz.uImage,pb9x-2.6.31-jffs2))
-$(eval $(call SingleProfile,ALFA,64k,HORNETUB,hornet-ub,HORNET-UB,ttyATH0,115200,$$(alfa_mtdlayout_8M),1638400,6291456,kernel_image,rootfs_image))
-$(eval $(call SingleProfile,ALFA,64k,TUBE2H8M,tube2h-8M,TUBE2H,ttyATH0,115200,$$(alfa_mtdlayout_8M),1638400,6291456,kernel.image,rootfs.image))
+$(eval $(call SingleProfile,ALFA,64k,HORNETUB,hornet-ub,HORNET-UB,ttyS0,115200,$$(alfa_mtdlayout_8M),1638400,6291456,kernel_image,rootfs_image))
+$(eval $(call SingleProfile,ALFA,64k,TUBE2H8M,tube2h-8M,TUBE2H,ttyS0,115200,$$(alfa_mtdlayout_8M),1638400,6291456,kernel.image,rootfs.image))
 
 $(eval $(call SingleProfile,AthGzip,64k,AP81,ap81,AP81,ttyS0,115200,$$(ap81_mtdlayout),RKuImage))
 $(eval $(call SingleProfile,AthGzip,64k,AP83,ap83,AP83,ttyS0,115200,$$(ap83_mtdlayout),RKuImage))
@@ -2055,9 +2061,9 @@ $(eval $(call SingleProfile,AthLzma,64k,ALFAAP96,alfa-ap96,ALFA-AP96,ttyS0,11520
 $(eval $(call SingleProfile,AthLzma,64k,ALL0258N,all0258n,ALL0258N,ttyS0,115200,$$(all0258n_mtdlayout),KRuImage,65536))
 $(eval $(call SingleProfile,AthLzma,256k,ALL0315N,all0315n,ALL0315N,ttyS0,115200,$$(all0315n_mtdlayout),KRuImage,262144))
 $(eval $(call SingleProfile,AthLzma,64k,AP113,ap113,AP113,ttyS0,115200,$$(ap113_mtd_layout),RK))
-$(eval $(call SingleProfile,AthLzma,64k,AP121_2M,ap121-2M,AP121,ttyATH0,115200,$$(ap121_mtdlayout_2M),RKuImage))
-$(eval $(call SingleProfile,AthLzma,64k,AP121_4M,ap121-4M,AP121,ttyATH0,115200,$$(ap121_mtdlayout_4M),RKuImage))
-$(eval $(call SingleProfile,AthLzma,64k,AP121MINI,ap121-mini,AP121-MINI,ttyATH0,115200,$$(ap121_mtdlayout_4M),RKuImage))
+$(eval $(call SingleProfile,AthLzma,64k,AP121_2M,ap121-2M,AP121,ttyS0,115200,$$(ap121_mtdlayout_2M),RKuImage))
+$(eval $(call SingleProfile,AthLzma,64k,AP121_4M,ap121-4M,AP121,ttyS0,115200,$$(ap121_mtdlayout_4M),RKuImage))
+$(eval $(call SingleProfile,AthLzma,64k,AP121MINI,ap121-mini,AP121-MINI,ttyS0,115200,$$(ap121_mtdlayout_4M),RKuImage))
 $(eval $(call SingleProfile,AthLzma,64k,AP132,ap132,AP132,ttyS0,115200,$$(ap132_mtdlayout),KRuImage))
 $(eval $(call SingleProfile,AthLzma,64k,AP135,ap135-020,AP135-020,ttyS0,115200,$$(ap135_mtdlayout),RKuImage))
 $(eval $(call SingleProfile,AthLzma,64k,AP136_010,ap136-010,AP136-010,ttyS0,115200,$$(ap136_mtdlayout),RKuImage))
@@ -2068,15 +2074,15 @@ $(eval $(call SingleProfile,AthLzma,64k,AP147_010,ap147-010,AP147-010,ttyS0,1152
 $(eval $(call SingleProfile,AthLzma,64k,BXU2000N2,bxu2000n-2-a1,BXU2000n-2-A1,ttyS0,115200,$$(bxu2000n2_mtdlayout),RKuImage))
 $(eval $(call SingleProfile,AthLzma,64k,CAP4200AG,cap4200ag,CAP4200AG,ttyS0,115200,$$(cap4200ag_mtdlayout),KRuImage))
 $(eval $(call SingleProfile,AthLzma,64k,DB120,db120,DB120,ttyS0,115200,$$(db120_mtdlayout),RKuImage))
-$(eval $(call SingleProfile,AthLzma,64k,DRAGINO2,dragino2,DRAGINO2,ttyATH0,115200,$$(dragino2_mtdlayout),KRuImage,65536))
-$(eval $(call SingleProfile,AthLzma,64k,EWDORINAP,ew-dorin,EW-DORIN,ttyATH0,115200,$$(ew-dorin_mtdlayout_4M),KRuImage,65536))
-$(eval $(call SingleProfile,AthLzma,64k,EWDORINRT,ew-dorin-router,EW-DORIN-ROUTER,ttyATH0,115200,$$(ew-dorin_mtdlayout_4M),KRuImage,65536))
-$(eval $(call SingleProfile,AthLzma,64k,EWDORIN16M,ew-dorin-16M,EW-DORIN,ttyATH0,115200,$$(ew-dorin_mtdlayout_16M),KRuImage,65536))
-$(eval $(call SingleProfile,AthLzma,64k,HORNETUBx2,hornet-ub-x2,HORNET-UB,ttyATH0,115200,$$(alfa_mtdlayout_16M),KRuImage,65536))
+$(eval $(call SingleProfile,AthLzma,64k,DRAGINO2,dragino2,DRAGINO2,ttyS0,115200,$$(dragino2_mtdlayout),KRuImage,65536))
+$(eval $(call SingleProfile,AthLzma,64k,EWDORINAP,ew-dorin,EW-DORIN,ttyS0,115200,$$(ew-dorin_mtdlayout_4M),KRuImage,65536))
+$(eval $(call SingleProfile,AthLzma,64k,EWDORINRT,ew-dorin-router,EW-DORIN-ROUTER,ttyS0,115200,$$(ew-dorin_mtdlayout_4M),KRuImage,65536))
+$(eval $(call SingleProfile,AthLzma,64k,EWDORIN16M,ew-dorin-16M,EW-DORIN,ttyS0,115200,$$(ew-dorin_mtdlayout_16M),KRuImage,65536))
+$(eval $(call SingleProfile,AthLzma,64k,HORNETUBx2,hornet-ub-x2,HORNET-UB,ttyS0,115200,$$(alfa_mtdlayout_16M),KRuImage,65536))
 $(eval $(call SingleProfile,AthLzma,64k,MR12,mr12,MR12,ttyS0,115200,$$(mr12_mtdlayout),RKuImage))
 $(eval $(call SingleProfile,AthLzma,64k,MR16,mr16,MR16,ttyS0,115200,$$(mr16_mtdlayout),RKuImage))
 $(eval $(call SingleProfile,AthLzma,64k,PB92,pb92,PB92,ttyS0,115200,$$(pb92_mtdlayout),KRuImage))
-$(eval $(call SingleProfile,AthLzma,64k,TUBE2H16M,tube2h-16M,TUBE2H,ttyATH0,115200,$$(alfa_mtdlayout_16M),KRuImage,65536))
+$(eval $(call SingleProfile,AthLzma,64k,TUBE2H16M,tube2h-16M,TUBE2H,ttyS0,115200,$$(alfa_mtdlayout_16M),KRuImage,65536))
 $(eval $(call SingleProfile,AthLzma,64k,WLR8100,wlr8100,WLR8100,ttyS0,115200,$$(wlr8100_mtdlayout),KRuImage))
 $(eval $(call SingleProfile,AthLzma,64k,WPJ344_16M,wpj344-16M,WPJ344,ttyS0,115200,$$(wpj344_mtdlayout_16M),KRuImage,65536))
 $(eval $(call SingleProfile,AthLzma,64k,WPJ531_16M,wpj531-16M,WPJ531,ttyS0,115200,$$(wpj531_mtdlayout_16M),KRuImage,65536))
@@ -2100,9 +2106,9 @@ $(eval $(call SingleProfile,CameoAP81,64kraw-nojffs,TEW632BRP,tew-632brp,TEW-632
 $(eval $(call SingleProfile,CameoAP81,64kraw-nojffs,TEW652BRP_FW,tew-652brp,TEW-632BRP,ttyS0,115200,"AP81-AR9130-RT-080609-05"))
 $(eval $(call SingleProfile,CameoAP81,64kraw-nojffs,TEW652BRP_RECOVERY,tew-652brp-recovery,TEW-632BRP,ttyS0,115200,"AP81-AR9130-RT-070614-02"))
 
-$(eval $(call SingleProfile,CameoAP121,64kraw-nojffs,TEW712BR,tew-712br,TEW-712BR,ttyATH0,115200,"HORNET-RT-TEW712BR-3",1.99,""))
-$(eval $(call SingleProfile,CameoAP121,64kraw-nojffs,DIR601B1,dir-601-b1,TEW-712BR,ttyATH0,115200,"HORNET-RT-DIR601B1-3",2.99.99,"" "NA"))
-$(eval $(call SingleProfile,CameoAP121_8M,64kraw-nojffs,DIR505A1,dir-505-a1,DIR-505-A1,ttyATH0,115200,"HORNET-PACKET-DIR505A1-3",1.99.99,""))
+$(eval $(call SingleProfile,CameoAP121,64kraw-nojffs,TEW712BR,tew-712br,TEW-712BR,ttyS0,115200,"HORNET-RT-TEW712BR-3",1.99,""))
+$(eval $(call SingleProfile,CameoAP121,64kraw-nojffs,DIR601B1,dir-601-b1,TEW-712BR,ttyS0,115200,"HORNET-RT-DIR601B1-3",2.99.99,"" "NA"))
+$(eval $(call SingleProfile,CameoAP121_8M,64kraw-nojffs,DIR505A1,dir-505-a1,DIR-505-A1,ttyS0,115200,"HORNET-PACKET-DIR505A1-3",1.99.99,""))
 
 $(eval $(call SingleProfile,CameoAP135,64kraw,DGL5500A1,dgl-5500-a1,DGL-5500-A1,ttyS0,115200,$$(dgl_5500_mtdlayout),"00AP135AR9558-RT-130508-00"))
 
@@ -2127,7 +2133,7 @@ $(eval $(call SingleProfile,EnGenius,64k,ESR900,esr900,ESR900,ttyS0,115200,$$(es
 $(eval $(call SingleProfile,EnGenius,64k,ESR1750,esr1750,ESR1750,ttyS0,115200,$$(esr1750_mtdlayout),KRuImage,,0x61))
 $(eval $(call SingleProfile,EnGenius,64k,EPG5000,epg5000,EPG5000,ttyS0,115200,$$(epg5000_mtdlayout),KRuImage,,0x71))
 
-$(eval $(call SingleProfile,HiWiFi,64k,HIWIFI_HC6361,hiwifi-hc6361,HiWiFi-HC6361,ttyATH0,115200,$$(hiwifi_hc6361_mtdlayout),KRuImage))
+$(eval $(call SingleProfile,HiWiFi,64k,HIWIFI_HC6361,hiwifi-hc6361,HiWiFi-HC6361,ttyS0,115200,$$(hiwifi_hc6361_mtdlayout),KRuImage))
 
 $(eval $(call SingleProfile,MyLoader,64k,WP543_2M,wp543,,ttyS0,115200,0x200000,2M))
 $(eval $(call SingleProfile,MyLoader,64k,WP543_4M,wp543,,ttyS0,115200,0x400000,4M))

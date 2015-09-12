@@ -6,6 +6,12 @@
 # See /LICENSE for more information.
 #
 
+CONFIGURE_ARGS += \
+	--enable-static \
+	--enable-shared \
+	--disable-ipfw-module \
+	--disable-ipq-module
+
 TOPDIR:=${CURDIR}
 LC_ALL:=C
 LANG:=C
